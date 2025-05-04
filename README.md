@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🚀 Getting Started
 
-## Getting Started
-
-First, run the development server:
+Clone the repo and install dependencies:
 
 ```bash
+git clone https://github.com/reddybashanaguru/web3-wallet-dashboard.git
+cd web3-wallet-dashboard
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🌐 Web3 Frontend DApp – Next.js + TypeScript + Ethers.js
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This is a full-stack Web3 decentralized application (DApp) frontend built with modern tools like **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **Ethers.js**, interacting with Ethereum-compatible blockchains and supporting wallet connections via MetaMask and WalletConnect.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔧 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Blockchain SDK**: Ethers.js
+- **Wallet Integration**: wagmi + viem (MetaMask, WalletConnect)
+- **Styling**: Tailwind CSS
+- **State & UX**: Custom React Context + Hooks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📌 Features Implemented
 
-## Deploy on Vercel
+### ✅ Wallet Connection
+- Connect/disconnect MetaMask and WalletConnect using wagmi client.
+- Show connected wallet address and ENS (if available).
+- Display balance of connected wallet.
+  
+### ✅ Ethers.js Integration
+- Created custom provider and signer using Ethers.js.
+- Read from smart contracts (e.g., `name`, `symbol`, etc.).
+- Send signed transactions like `transfer`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✅ Smart Contract Interaction
+- Interacted with sample ERC-20 smart contract deployed on Sepolia.
+- Used Ethers.js `Contract` object to read and write on-chain data.
+- Read values like `totalSupply`, `symbol`, and `balanceOf`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ✅ Real-Time Wallet Events
+- Listened to:
+  - `accountsChanged`
+  - `chainChanged`
+- Automatically refreshed frontend UI and context on event updates.
+
+### ✅ Custom React Hooks
+- Created reusable `useWallet` and `useContract` hooks.
+- Hook-based architecture separates logic cleanly.
+
+### ✅ Responsive UI with Tailwind CSS
+- Simple and mobile-friendly layout.
+- Wallet connection, account data, and contract interaction buttons styled with Tailwind.
+
+---
+🔐 Smart Contract Info (Demo)
+Using a simple ERC-20 smart contract:
+
+function name() public view returns (string)
+function symbol() public view returns (string)
+function totalSupply() public view returns (uint256)
+function balanceOf(address account) public view returns (uint256)
+function transfer(address recipient, uint256 amount) public returns (bool)
+
+🌍 Live Wallet Interactions
+Sign transactions using the Ethers.js Signer.
+Send transfer calls from connected wallet.
+Reflect wallet changes in the UI.
+
+📄 Future Enhancements
+🔐 SIWE (Sign-In with Ethereum) for user sessions
+📸 NFT Minting + Display
+⚡ Gasless Transactions with Biconomy
+🔁 Transaction history log and UI
+📚 GraphQL indexer integration
+
+🙌 Author
+Naguru Reddy Basha
+Senior Frontend Engineer | 10 YOE
+Expertise: React, TypeScript, Web3, Next.js, Ethers.js
+reddybasha524@gmail.com
